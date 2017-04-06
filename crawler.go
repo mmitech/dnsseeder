@@ -70,12 +70,12 @@ func crawlIP(s *dnsseeder, r *result) ([]*wire.NetAddress, *crawlError) {
 		return nil, &crawlError{"Write Version Message", err}
 	}
 
-	// first message received should be version
+	/* first message received should be version
 	msg, _, err := wire.ReadMessage(conn, s.pver, s.id)
 	if err != nil {
 		// Log and handle the error
 		return nil, &crawlError{"Read message after sending Version", err}
-	}
+	} */
 
 	switch msg := msg.(type) {
 	case *wire.MsgVersion:
